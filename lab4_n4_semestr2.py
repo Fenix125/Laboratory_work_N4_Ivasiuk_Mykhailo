@@ -301,6 +301,8 @@ def day(pers):
     """
     Starts day
     """
+    if not isinstance(pers, Person):
+        raise TypeError('Please provide an instance of class Person')
     day_of_person = Day(pers)
     for hour in range(1, 25):
         day_of_person.send(hour)
@@ -312,5 +314,4 @@ def day(pers):
 #Create a person and call "day" function
 person = Person('Mykhailo')
 slow_print(day(person))
-
 
